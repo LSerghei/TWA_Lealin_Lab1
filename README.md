@@ -1,1 +1,2 @@
-# TWA_Lealin_Lab1
+# Labiratory work for subject "TWA".
+# "Trivia made on JavaScript with JSON"
