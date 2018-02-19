@@ -2,12 +2,12 @@
 
 var jsonQuestions = [{questionText : "What was the first console video game that allowed the game to be saved? </br> a) Super Mario Brothers </br> b) The Legend of Zelda </br> c) Super Metroid", answerChar : "b"},
 					{questionText : "Created in 2009, what was the first decentralized cryptocurrency? </br> a) Ethereum </br> b) Ripple </br> c) Bitcoin", answerChar : "c"},
-					{questionText : "The USB in 'USB Cable' Stands For What? </br> a) Utility Service Bind </br> b) Uninterrupted Service Bus </br> c) Universal Serial Bus </br> d) Uniform Sync Bank", answerChar : "c"},
-					{questionText : "Which Company Did Steve Jobs Ask To Build OSX-based Laptops? </br> a) Sony </br> b) Hewlett-Packard </br> c) Dell </br> d) IBM", answerChar : "a"},
-					{questionText : "After Whom Is The Linux Operating System Named? </br> a) Lineaus Henderson </br> b) Leonardo da Vinci </br> c) Linus Pauling </br> d) Linus Torvalds", answerChar : "d"}];
+					{questionText : "The USB in 'USB Cable' stands for what? </br> a) Utility Service Bind </br> b) Uninterrupted Service Bus </br> c) Universal Serial Bus </br> d) Uniform Sync Bank", answerChar : "c"},
+					{questionText : "Which company did Steve Jobs ask to build OSX-based Laptops? </br> a) Sony </br> b) Hewlett-Packard </br> c) Dell </br> d) IBM", answerChar : "a"},
+					{questionText : "After whom is the Linux operating system named? </br> a) Lineaus Henderson </br> b) Leonardo da Vinci </br> c) Linus Pauling </br> d) Linus Torvalds", answerChar : "d"}];
 
 var QUESTIONS_COUNT = jsonQuestions.length;
-var QUESTIONS_SHOW_COUNT = 5;
+var QUESTIONS_SHOW_COUNT = 3;
 
 var questionIDs = [];
 var hQuestions = [], pQuestions = [], iAnswers = [];
