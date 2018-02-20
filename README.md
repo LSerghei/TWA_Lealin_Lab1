@@ -1,2 +1,2 @@
-# Labiratory work for subject "TWA".
-# "Trivia made on JavaScript with JSON"
+# Laboratory work for subject "TWA".
+# "Quiz made on JavaScript with JSON"
