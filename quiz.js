@@ -93,7 +93,7 @@ function init(){
 		document.body.appendChild(iAnswers[i]);
 	}
 	
-	//Create two breaks for Answer button
+	//Create two breaks before Answer button
 	document.body.appendChild(document.createElement("BR"));
 	document.body.appendChild(document.createElement("BR"));
 	
@@ -103,5 +103,6 @@ function init(){
 	bAnswer.innerHTML = "Answer";
 	document.body.appendChild(bAnswer);
 	
+	//Start timer to count seconds
 	startTime = new Date();
 }
