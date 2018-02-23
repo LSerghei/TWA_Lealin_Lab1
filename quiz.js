@@ -22,16 +22,7 @@ var bAnswer;
 
 var startTime, endTime;
 
-//Generate N non repeatable numbers
-var elem, i;
-for (i = 0; i < QUESTIONS_SHOW_COUNT; i++){
-	do{
-		elem = Math.floor((Math.random() * QUESTIONS_COUNT));
-	}
-	while (questionIDs.indexOf(elem) != -1);
-	
-	questionIDs.push(elem);
-}
+var i;
 
 //Functions
 function checkAnswer(){
@@ -73,8 +64,19 @@ function init(){
 	document.getElementById("bStart").style.display = "none";
 	sQuestionCount.style.display = "none";
 	
+	//Generate N non repeatable numbers
 	QUESTIONS_SHOW_COUNT = sQuestionCount.options[sQuestionCount.selectedIndex].value;
 	
+	var elem;
+	for (i = 0; i < QUESTIONS_SHOW_COUNT; i++){
+		do{
+			elem = Math.floor((Math.random() * QUESTIONS_COUNT));
+		}
+		while (questionIDs.indexOf(elem) != -1);
+		
+		questionIDs.push(elem);
+	}
+		
 	//Create H4 and P elements for questions' texts
 	for (i = 0; i < QUESTIONS_SHOW_COUNT; i++){
 		hQuestions.push(document.createElement("H4"));
