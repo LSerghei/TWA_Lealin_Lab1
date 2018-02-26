@@ -1,0 +1,11 @@
+[{questionText : "What was the first console video game that allowed the game to be saved?", answerList : ["Super Mario Brothers", "The Legend of Zelda", "Super Metroid"], answerCorrect : "The Legend of Zelda"},
+	{questionText : "Created in 2009, what was the first decentralized cryptocurrency?", answerList : ["Ethereum", "Ripple", "Bitcoin"], answerCorrect : "Bitcoin"},
+	{questionText : "The USB in 'USB Cable' stands for what?", answerList : ["Utility Service Bind", "Uninterrupted Service Bus", "Universal Serial Bus", "Uniform Sync Bank"], answerCorrect : "Universal Serial Bus"},
+	{questionText : "Which company did Steve Jobs ask to build OSX-based Laptops?", answerList : ["Sony", "Hewlett-Packard", "Dell", "IBM"], answerCorrect : "Sony"},
+	{questionText : "Which computer technology derives its name from Greek mythology?", answerList : ["Daemons", "Caches", "NAND Gates", "Processors"], answerCorrect : "Daemons"},
+	{questionText : "The largest fresh water lake in the world is located in?", answerList : ["Brazil", "Russia", "The United States", "China"], answerCorrect : "Russia"},
+	{questionText : "Canada and which of these U.S. States have very similar population sizes?", answerList : ["New York", "California", "Florida", "Texas"], answerCorrect : "California"},
+	{questionText : "The opposite of Albinism is called?", answerList : ["Velvetinism", "Alopecia X", "Vitiligo", "Melanism"], answerCorrect : "Melanism"},
+	{questionText : "Who produced the world's first commercial 1TB Hard Drive?", answerList : ["Western Digital", "Hitachi", "Maxtor", "Seagate"], answerCorrect : "Hitachi"},
+	{questionText : "The fattiest organ of the human body is the?", answerList : ["Pancreas", "Heart", "Brain", "Liver"], answerCorrect : "Brain"},
+	{questionText : "After whom is the Linux operating system named?", answerList : ["Lineaus Henderson", "Leonardo da Vinci", "Linus Pauling", "Linus Torvalds"], answerCorrect : "Linus Torvalds"}];

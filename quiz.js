@@ -1,28 +1,18 @@
 "use strict";
 
-var jsonQuestions = [{questionText : "What was the first console video game that allowed the game to be saved? </br> a) Super Mario Brothers </br> b) The Legend of Zelda </br> c) Super Metroid", answerChar : "b"},
-					{questionText : "Created in 2009, what was the first decentralized cryptocurrency? </br> a) Ethereum </br> b) Ripple </br> c) Bitcoin", answerChar : "c"},
-					{questionText : "The USB in 'USB Cable' stands for what? </br> a) Utility Service Bind </br> b) Uninterrupted Service Bus </br> c) Universal Serial Bus </br> d) Uniform Sync Bank", answerChar : "c"},
-					{questionText : "Which company did Steve Jobs ask to build OSX-based Laptops? </br> a) Sony </br> b) Hewlett-Packard </br> c) Dell </br> d) IBM", answerChar : "a"},
-					{questionText : "Which computer technology derives its name from Greek mythology? </br> a) Daemons </br> b) Caches </br> c) NAND Gates </br> d) Processors", answerChar : "a"},
-					{questionText : "The largest fresh water lake in the world is located in? </br> a) Brazil </br> b) Russia </br> c) The United States </br> d) China", answerChar : "b"},
-					{questionText : "Canada and which of these U.S. States have very similar population sizes? </br> a) New York </br> b) California </br> c) Florida </br> d) Texas", answerChar : "b"},
-					{questionText : "The opposite of Albinism is called? </br> a) Velvetinism </br> b) Alopecia X </br> c) Vitiligo </br> d) Melanism", answerChar : "d"},
-					{questionText : "Who produced the world's first commercial 1TB Hard Drive? </br> a) Western Digital </br> b) Hitachi </br> c) Maxtor </br> d) Seagate", answerChar : "b"},
-					{questionText : "The fattiest organ of the human body is the? </br> a) Pancreas </br> b) Heart </br> c) Brain </br> d) Liver", answerChar : "c"},
-					{questionText : "After whom is the Linux operating system named? </br> a) Lineaus Henderson </br> b) Leonardo da Vinci </br> c) Linus Pauling </br> d) Linus Torvalds", answerChar : "d"}];
+var jsonQuestions;
 
 var QUESTIONS_COUNT = jsonQuestions.length;
 var QUESTIONS_SHOW_COUNT = 5;
 
 var questionIDs = [];
-var hQuestions = [], pQuestions = [], iAnswers = [];
+var hQuestions = [], pQuestions = [], fAnswers = [];
 var sQuestionCount;
 var bAnswer;
 
 var startTime, endTime;
 
-var i;
+var i, j;
 
 //Functions
 function checkAnswer(){
@@ -30,10 +20,21 @@ function checkAnswer(){
 	var totalSeconds;
 	
 	for (i = 0; i < QUESTIONS_SHOW_COUNT; i++){
-		//Remove loose spaces and set to lower case like in answers
-		jsonQuestions[questionIDs[i]].answerFromUser = document.getElementById("a" + questionIDs[i]).value.trim().toLowerCase();
+		var usersAnswers = document.getElementsByName("question" + questionIDs[i]);
+		jsonQuestions[questionIDs[i]].answerUser = "";
 		
-		if (jsonQuestions[questionIDs[i]].answerFromUser === jsonQuestions[questionIDs[i]].answerChar) {
+		for(j = 0; j < usersAnswers.length; j++){
+			if(usersAnswers[j].checked){
+				jsonQuestions[questionIDs[i]].answerUser = usersAnswers[j].value;
+			}
+		}
+		
+		if (jsonQuestions[questionIDs[i]].answerUser == ""){
+			alert("Not all questions were answered!");
+			return;
+		}
+		
+		if (jsonQuestions[questionIDs[i]].answerUser == jsonQuestions[questionIDs[i]].answerCorrect) {
 			countAnswer++;
 		} 
 	}
@@ -89,16 +90,27 @@ function init(){
 		
 		document.body.appendChild(pQuestions[i]);
 		
-		iAnswers.push(document.createElement("INPUT"));
-		iAnswers[i].setAttribute("id", "a" + questionIDs[i]);
+		//Form elements for radio buttons
+		fAnswers.push(document.createElement("FORM"));
 		
-		document.body.appendChild(iAnswers[i]);
+		for (j = 0; j < jsonQuestions[questionIDs[i]].answerList.length; j++)
+		{
+			var inputRadioQuestion = document.createElement("INPUT");
+			var label = document.createElement("LABEL");
+			
+			inputRadioQuestion.setAttribute("type", "radio");
+			inputRadioQuestion.setAttribute("name", "question" + questionIDs[i]);
+			inputRadioQuestion.setAttribute("value", jsonQuestions[questionIDs[i]].answerList[j]);
+			
+			label.appendChild(inputRadioQuestion);
+			label.innerHTML += "<span> " + jsonQuestions[questionIDs[i]].answerList[j] + "</span><br>";
+			
+			fAnswers[i].appendChild(label);
+		}
+		
+		document.body.appendChild(fAnswers[i]);
 	}
-	
-	//Create two breaks before Answer button
-	document.body.appendChild(document.createElement("BR"));
-	document.body.appendChild(document.createElement("BR"));
-	
+
 	//Create Answer button
 	bAnswer = document.createElement("BUTTON");
 	bAnswer.setAttribute("onclick", "checkAnswer()");
